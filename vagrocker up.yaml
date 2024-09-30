@@ -1,0 +1,10 @@
+---
+name: vagrocker up
+command: "cd ~/Exads/sys-vagrocker \n./vagrocker up"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

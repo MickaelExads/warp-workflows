@@ -1,0 +1,10 @@
+---
+name: Composer update force
+command: for i in ads gateway jobs management misc phpincludes rtb static syndication www-api-exads/v2 www-network-api-exads/v1; do (cd $i && composer-update --no-scripts --no-plugins); done
+description: inside container
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

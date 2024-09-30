@@ -1,0 +1,10 @@
+---
+name: Reset Hard phpincludes
+command: "# Navigate to the main directory\ncd /var/www/ || exit\n\n# List of repositories to reset\nrepos=(\n    gateway ads jobs rtb static syndication docs-api-swagger/v2 \n    www-api-exads/v2 www-network-api-exads/v1 management \n    push-notifications misc www-adrepository adrepository phpincludes\n)\n\n# Loop through each repository\nfor repo in \"${repos[@]}\"\ndo\n    # Check if the vendor directory exists before resetting\n    target_dir=\"/var/www/$repo/vendor/exads/phpincludes\"\n    if [ -d \"$target_dir\" ]; then\n        cd \"$target_dir\" || continue\n        git reset --hard HEAD\n        echo \"Reset completed for $repo\"\n    else\n        echo \"Directory $target_dir does not exist, skipping...\"\n    fi\ndone"
+description: do this inside container web
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

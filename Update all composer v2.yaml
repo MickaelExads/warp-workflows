@@ -1,0 +1,10 @@
+---
+name: Update all composer v2
+command: "for dir in $(find /vagrant/code -type f -name composer.lock | grep -v /vendor/ | sed -e 's/composer\\.lock//g'); do \n  echo $dir; \n  cd $dir && composer update --no-scripts; \ndone"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

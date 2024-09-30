@@ -1,0 +1,10 @@
+---
+name: vagrocker ssh web
+command: "cd ~/Exads/sys-vagrocker \n./vagrocker ssh web"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

@@ -1,0 +1,10 @@
+---
+name: Update dbmigration
+command: "cd ~/Exads/sys-vagrocker/code/dbmigration/dbscripts/ \ngit pull"
+description: "ATTENTION: run only that says \" RUN ALL NETWORKS \"\nOpen each migration and see if it's need to run or mark as done. "
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

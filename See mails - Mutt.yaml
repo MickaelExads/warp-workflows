@@ -1,0 +1,10 @@
+---
+name: See mails - Mutt
+command: mutt -f /var/mail/vagrant
+description: "#install this first\nsudo yum install mutt "
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

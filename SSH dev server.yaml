@@ -1,0 +1,10 @@
+---
+name: SSH dev server
+command: ssh mickael@dweb.ovh.0x3e.net
+description: dev server
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

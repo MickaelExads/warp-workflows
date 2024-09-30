@@ -1,0 +1,10 @@
+---
+name: See logs
+command: sudo journalctl -u php-fpm -f
+description: "run inside the container "
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

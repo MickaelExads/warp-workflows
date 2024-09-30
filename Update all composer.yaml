@@ -1,0 +1,14 @@
+---
+name: Update all composer
+command: "for dir in `find /vagrant/code -type f -name composer.lock | grep -v /vendor/ | sed -e 's/composer\\.lock//g'`; do (echo; echo $dir; cd $dir && composer-update --no-scripts {{interaction}}); done"
+description: "do this insde container "
+arguments:
+  - name: interaction
+    arg_type: Text
+    description: Interaction
+    default_value: "--no-interaction"
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

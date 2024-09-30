@@ -1,0 +1,10 @@
+---
+name: Ensure have last code
+command: "./vagrocker ssh web -c 'for dir in `find /vagrant/code -type d -name .git | grep -v /vendor/ | sed -e 's/\\.git//g'`; do (echo; echo $dir; cd $dir && git pull --rebase --autostash); done';\n./vagrocker ssh web -c 'for dir in `find /vagrant/code -type f -name composer.lock | grep -v /vendor/ | sed -e 's/composer\\.lock//g'`; do (echo; echo $dir; cd $dir && composer-update --no-scripts); done';"
+description: "https://infra-docs.exogroup.com/docs/exogroup/vagrocker"
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

@@ -1,0 +1,10 @@
+---
+name: "List repos and branchs "
+command: "cd ~/Exads/sys-vagrocker/projects/exads/data/code/\nfor repo in ./www-network-api-exads/v1/.git \\\n             ./misc/.git \\\n             ./management/.git \\\n             ./ecadmin/.git \\\n             ./gateway/.git \\\n             ./php-huffman/.git \\\n             ./syndication/.git \\\n             ./docs-network-api-swagger/v1/.git \\\n             ./kantox-sdk-guzzle5/.git \\\n             ./admin-v2/.git \\\n             ./exads-core/.git \\\n             ./ads/.git \\\n             ./adrepository/.git \\\n             ./rtb/.git \\\n             ./static/.git \\\n             ./push-notifications/.git \\\n             ./dbmigration/.git \\\n             ./www-api-exads/v2/.git \\\n             ./exads-common/.git \\\n             ./phpincludes/.git \\\n             ./jobs/.git \\\n             ./docs-api-swagger/v2/.git \\\n             ./docs-api-swagger/v1/.git; do \\\n      echo \"Repository: ${repo%.git}\"; \\\n      git --git-dir=\"$repo\" --work-tree=\"${repo%/.git}\" branch; \\\n      echo \"\"; \\\ndone"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

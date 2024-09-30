@@ -1,0 +1,10 @@
+---
+name: Update all code -  Git
+command: "for dir in `find /vagrant/code -type d -name .git | grep -v /vendor/ | sed -e 's/\\.git//g'`; do (echo; echo $dir; cd $dir && git pull --rebase --autostash); done"
+description: git pull --rebase
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []
