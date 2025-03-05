@@ -1,0 +1,10 @@
+---
+name: Clean All the Caches
+command: sudo systemctl restart memcached.service && sudo systemctl restart memcached-moxi.service && sudo systemctl restart memcached-moxi-xdcr.service
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

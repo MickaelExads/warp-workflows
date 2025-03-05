@@ -1,6 +1,6 @@
 ---
-name: Undo the last Git commit
-command: git reset HEAD~
+name: See all the queries
+command: sudo tail -f /var/log/mariadb/general.log -n 50
 description: ~
 arguments: []
 tags: []

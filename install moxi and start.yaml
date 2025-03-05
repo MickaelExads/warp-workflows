@@ -1,0 +1,10 @@
+---
+name: install moxi and start
+command: "#!/bin/bash\n# To be executed on the `web` container\n\nyum -y install moxi-server\nsystemctl disable --now memcached-moxi memcached-moxi-xdcr.service\n\ninstances=(\n  \"exads\"\n  \"exads-xdcr\"\n  \"bidshading\"\n)\n\nnodes=(\n  # \"couchbase\"  # asylum\n  \"couchbase1\"   # contrib/couchbase\n  \"couchbase2\"   # contrib/couchbase\n  \"couchbase3\"   # contrib/couchbase\n)\n\nmkdir /var/log/moxi\nchmod 775 /var/log/moxi\nchown root:moxi /var/log/moxi\n\nfor instance in ${instances[@]}; do\n  systemctl disable --now moxi-${instance} &> /dev/null\n  urls=\"\"\n  for node in ${nodes[@]}; do\n    url=\"http://${node}:8091/pools/default/bucketsStreaming/${instance}\"\n    if [ -z \"$urls\" ]; then\n      urls=\"${url}\"\n    else\n      urls=\"${urls},${url}\"\n    fi\n  done\n  cat << _EOF > /etc/systemd/system/moxi-${instance}.service\n[Unit]\nDescription=Moxi Server for ${instance} CouchBase bucket\nAfter=network-online.target remote-fs.target nss-lookup.target\n\n[Service]\nUser=moxi\nRuntimeDirectory=${instance}\nLimitNOFILE=10240\nExecStart=/opt/moxi/bin/moxi -t 8 -c 4096 -s /run/${instance}/socket -a 0777 -v -O /var/log/moxi/${instance}.log -Z usr=exads,pwd=exadsexads,downstream_conn_max=8,connect_max_errors=10 ${urls}\nRestart=on-failure\n\n[Install]\nWantedBy=multi-user.target\n_EOF\n\n  systemctl daemon-reload\n  systemctl enable --now moxi-${instance}\ndone"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

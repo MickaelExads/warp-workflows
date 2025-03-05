@@ -1,0 +1,14 @@
+---
+name: Change to specific branch
+command: "# Define the target branch you want to check out\ntarget_branch=\"{{TARGET_BRANCH}}\"\n\n# Define fallback to master if the branch doesn't exist (set to true or false)\nfallback_to_master=true\n\n# Define colors for output\ngreen=\"\\033[0;32m\"\nyellow=\"\\033[0;33m\"\nred=\"\\033[0;31m\"\nreset=\"\\033[0m\"\n\n# Navigate to the base directory containing the repositories\ncd ~/Exads/sys-vagrocker/projects/exads/data/code/ || exit 1\n\n# List of repositories\nrepos=(\n  \"./www-network-api-exads/v1/.git\"\n  \"./misc/.git\"\n  \"./management/.git\"\n  \"./ecadmin/.git\"\n  \"./gateway/.git\"\n  \"./php-huffman/.git\"\n  \"./syndication/.git\"\n  \"./docs-network-api-swagger/v1/.git\"\n  \"./kantox-sdk-guzzle5/.git\"\n  \"./admin-v2/.git\"\n  \"./exads-core/.git\"\n  \"./ads/.git\"\n  \"./adrepository/.git\"\n  \"./rtb/.git\"\n  \"./static/.git\"\n  \"./push-notifications/.git\"\n  \"./dbmigration/.git\"\n  \"./www-api-exads/v2/.git\"\n  \"./exads-common/.git\"\n  \"./phpincludes/.git\"\n  \"./jobs/.git\"\n  \"./docs-api-swagger/v2/.git\"\n  \"./docs-api-swagger/v1/.git\"\n)\n\n# Iterate through each repository\nfor repo in \"${repos[@]}\"; do\n  repo_path=\"${repo%.git}\"\n  echo \"\"\n  echo -e \"Processing repository: $repo_path\"\n\n  # Ensure the repository exists\n  if [ ! -d \"$repo\" ]; then\n    echo -e \"${yellow}Warning: Repository $repo not found. Skipping.${reset}\"\n    continue\n  fi\n\n  # Navigate to the repository and check out the target branch\n  git --git-dir=\"$repo\" --work-tree=\"$repo_path\" fetch origin || {\n    echo -e \"${red}Error: Failed to fetch from origin for $repo_path. Skipping.${reset}\"\n    continue\n  }\n\n  if git --git-dir=\"$repo\" --work-tree=\"$repo_path\" checkout \"$target_branch\"; then\n    echo -e \"${green}Success: Checked out branch '$target_branch' in $repo_path.${reset}\"\n  else\n    echo -e \"${yellow}Warning: Branch '$target_branch' not found in $repo_path.${reset}\"\n    if [ \"$fallback_to_master\" = true ]; then\n      echo -e \"${yellow}Falling back to 'master' branch.${reset}\"\n      if git --git-dir=\"$repo\" --work-tree=\"$repo_path\" checkout master; then\n        echo -e \"${green}Success: Checked out 'master' branch in $repo_path.${reset}\"\n      else\n        echo -e \"${red}Error: Failed to check out 'master' branch in $repo_path. Skipping.${reset}\"\n        continue\n      fi\n    else\n      echo -e \"${red}Skipping repository due to missing target branch and fallback disabled.${reset}\"\n      continue\n    fi\n  fi\n\n  echo \"\"\ndone\n\n# Done\necho -e \"${green}Script execution completed.${reset}\"\n"
+description: Set the Navigate to base directory
+arguments:
+  - name: TARGET_BRANCH
+    arg_type: Text
+    description: master
+    default_value: master
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

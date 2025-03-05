@@ -1,6 +1,6 @@
 ---
-name: vagrocker ssh web
-command: "cd ~/Exads/sys-vagrocker \n./vagrocker ssh web"
+name: vagrocker ssh DBM
+command: "cd ~/Exads/sys-vagrocker \n./vagrocker ssh dbm"
 description: ~
 arguments: []
 tags: []

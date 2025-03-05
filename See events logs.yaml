@@ -1,0 +1,10 @@
+---
+name: See events logs
+command: "cd /var/exads/data/ad-server;\ntail -f *.log;"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

@@ -1,0 +1,10 @@
+---
+name: ecaadmin cache
+command: " \nphp artisan view:clear && php artisan cache:clear && php artisan route:clear && php artisan config:clear\n\ncd /var/www/ecadmin"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

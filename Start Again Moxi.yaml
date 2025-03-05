@@ -1,0 +1,10 @@
+---
+name: Start Again Moxi
+command: "\n/usr/bin/memcached -o modern -s /run/moxi-exads-xdcr/socket -a 0777 -m 7680 -c 10000 -t 32 &\n\n\n/usr/bin/memcached -o modern -s /run/moxi-exads/socket -a 0777 -m 7680 -c 10000 -t 32 &"
+description: kill moxi
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

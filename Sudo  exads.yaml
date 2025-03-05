@@ -1,0 +1,10 @@
+---
+name: Sudo  exads
+command: sudo -i -u exads;
+description: Sudo inside web
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

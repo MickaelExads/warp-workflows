@@ -1,0 +1,10 @@
+---
+name: Set symlinks v2
+command: "cd /vagrant/code/\n\nfor repo in gateway ads jobs rtb static syndication docs-api-swagger/v2 www-api-exads/v2 www-network-api-exads/v1 management push-notifications misc www-adrepository adrepository phpincludes\ndo\n    cd /vagrant/code/$repo/vendor/exads\n    rm -rf $PWD/exads-core\n    ln -sfn /vagrant/code/exads-core $PWD\n    rm -rf $PWD/exads-common\n    ln -sfn /vagrant/code/exads-common $PWD\n    rm -rf $PWD/php-huffman\n    ln -sfn /vagrant/code/php-huffman $PWD\n    rm -rf $PWD/phpincludes\n    ln -sfn /vagrant/code/phpincludes $PWD\ndone\n\n"
+description: do this inside container web
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

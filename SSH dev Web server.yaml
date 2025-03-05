@@ -1,5 +1,5 @@
 ---
-name: SSH dev server
+name: SSH dev Web server
 command: ssh mickael@dweb.ovh.0x3e.net
 description: dev server
 arguments: []

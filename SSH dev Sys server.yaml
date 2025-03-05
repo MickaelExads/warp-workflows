@@ -1,0 +1,10 @@
+---
+name: SSH dev Sys server
+command: ssh mickael@dsys.ovh.0x3e.net
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []
