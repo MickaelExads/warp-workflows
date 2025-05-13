@@ -1,0 +1,14 @@
+---
+name: PHPstan
+command: "./vendor/bin/phpstan analyse ./src --no-progress --memory-limit 1G --error-format=json --level={{level}} --error-format=prettyJson > report{{level}}.json "
+description: ~
+arguments:
+  - name: level
+    arg_type: Text
+    description: level
+    default_value: "0"
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

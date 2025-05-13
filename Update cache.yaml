@@ -1,6 +1,6 @@
 ---
 name: Update cache
-command: "#sudo -i -u exads;\ncd /vagrant/code/jobs;\nphp campaigns-caching-v3.php --debug --network-hash=e738bad9 ; php campaigns-caching-v3-push.php --XXX --debug --network-hash=e738bad9 ; php campaigns-caching-v3-push.php --IRL --debug --network-hash=e738bad9 ; php campaigns-caching-v3-push.php --PRT --debug --network-hash=e738bad9  "
+command: "#sudo -i -u exads;\ncd /vagrant/code/jobs;\nphp campaigns-caching-v3.php --debug --network-hash=6a97888e ; php campaigns-caching-v3-push.php --XXX --debug --network-hash=6a97888e ; php campaigns-caching-v3-push.php --IRL --debug --network-hash=6a97888e ; php campaigns-caching-v3-push.php --PRT --debug --network-hash=6a97888e"
 description: "first sudo -i -u exads; running the script in jobs folder to update the cache; "
 arguments: []
 tags: []

@@ -1,0 +1,14 @@
+---
+name: Services moxi
+command: "sudo systemctl {{stop}} moxi-exads.service && sudo systemctl {{stop}} moxi-exads-xdcr.service && sudo systemctl {{stop}} moxi-bidshading.service && sudo systemctl {{stop}} moxi-server.service"
+description: start or stop
+arguments:
+  - name: stop
+    arg_type: Text
+    description: stop|start
+    default_value: stop
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

@@ -1,0 +1,10 @@
+---
+name: Couchbase ssh
+command: docker exec -it couchbase1 bash
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

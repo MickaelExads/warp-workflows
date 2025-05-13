@@ -1,0 +1,10 @@
+---
+name: PHPstan clean cache
+command: "./vendor/bin/phpstan clear-result-cache"
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

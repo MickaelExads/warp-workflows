@@ -1,0 +1,10 @@
+---
+name: Service List
+command: systemctl list-units --type=service --all
+description: list all services
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []

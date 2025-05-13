@@ -1,0 +1,10 @@
+---
+name: Logs folder
+command: cd /opt/couchbase/var/lib/couchbase/logs/
+description: ~
+arguments: []
+tags: []
+source_url: ~
+author: ~
+author_url: ~
+shells: []
